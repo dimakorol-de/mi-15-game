@@ -16,11 +16,14 @@ jobs:
       - name: Install Hap-Toolkit
         run: npm install hap-toolkit
 
+      - name: Generate Security Keys
+        run: npx hap keygen --sign release # Создаем цифровые подписи для приложения
+
       - name: Compile RPK
-        run: npx hap compile
+        run: npx hap compile --sign release # Собираем подписанное приложение
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
           name: my-15-game
-          path: "**/*.rpk" # Искать файл во всех папках проекта автоматически
+          path: "**/*.rpk"
