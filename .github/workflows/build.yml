@@ -13,11 +13,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Hap-Tools
-        run: npm install hap-tools
+      - name: Install Hap-Toolkit
+        run: npm install hap-toolkit # Ставим правильный официальный пакет инструментов
 
       - name: Compile RPK
-        run: npx --package=hap-tools quickapp compile
+        run: npx hap compile # Запускаем стандартную компиляцию Quick App
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
