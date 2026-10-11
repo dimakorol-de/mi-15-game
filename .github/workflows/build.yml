@@ -23,7 +23,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: my-15-game
-          path: |
-            dist/*.rpk
-            build/*.rpk
-            *.rpk
+          path: "**/*.rpk" # Искать файл во всех папках проекта автоматически
