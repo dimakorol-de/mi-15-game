@@ -12,17 +12,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 16
+          cache: 'npm'
 
-      - name: Install Hap-Tools Locally
-        run: npm install hap-tools --save-dev
+      - name: Install Dependencies
+        run: npm install # Теперь эта команда прочитает наш package.json и поставит всё правильно
 
       - name: Compile RPK
-        run: npx hap compile
+        run: npm run build # Запуск официальной сборки проекта
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
           name: my-15-game
-          path: |
-            dist/*.rpk
-            build/*.rpk
+          path: dist/*.rpk
