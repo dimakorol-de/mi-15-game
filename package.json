@@ -1,11 +1,7 @@
 {
   "name": "mi-15-game",
   "version": "1.0.0",
-  "description": "15 game for Mi Band 10",
   "scripts": {
-    "build": "./node_modules/.bin/hap compile"
-  },
-  "devDependencies": {
-    "hap-tools": "latest"
+    "build": "quickapp compile"
   }
 }
