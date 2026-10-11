@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "15 game for Mi Band 10",
   "scripts": {
-    "build": "npx quickapp compile"
+    "build": "./node_modules/.bin/hap compile"
   },
   "devDependencies": {
     "hap-tools": "latest"
