@@ -6,6 +6,6 @@
     "build": "hap compile"
   },
   "devDependencies": {
-    "hap-tools": "^0.1.1"
+    "hap-tools": "latest"
   }
 }
