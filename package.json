@@ -1,7 +1,0 @@
-{
-  "name": "mi-15-game",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "npx quickapp-cli compile"
-  }
-}
