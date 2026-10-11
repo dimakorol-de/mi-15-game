@@ -14,10 +14,10 @@ jobs:
           node-version: 16
 
       - name: Install Hap-Tools
-        run: npm install hap-tools # Устанавливаем официальный пакет внутрь сервера
+        run: npm install hap-tools
 
       - name: Compile RPK
-        run: ./node_modules/hap-tools/bin/index.js compile # Прямой вызов главного файла сборщика Xiaomi
+        run: npx --package=hap-tools hap compile # Умный запуск компилятора от Xiaomi
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
