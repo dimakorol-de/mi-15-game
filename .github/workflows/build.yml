@@ -16,11 +16,14 @@ jobs:
       - name: Install Hap-Toolkit
         run: npm install hap-toolkit
 
-      - name: Generate Security Keys
-        run: npx hap keygen --sign release # Создаем цифровые подписи для приложения
+      - name: Pre-build Setup
+        run: |
+          mkdir -p sign
+          npx hap keygen --sign release
+          cp -r src/* .
 
       - name: Compile RPK
-        run: npx hap compile --sign release # Собираем подписанное приложение
+        run: npx hap compile --sign release
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
