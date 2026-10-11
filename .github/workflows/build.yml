@@ -14,15 +14,16 @@ jobs:
           node-version: 16
 
       - name: Install Hap-Toolkit
-        run: npm install hap-toolkit # Ставим правильный официальный пакет инструментов
+        run: npm install hap-toolkit
 
       - name: Compile RPK
-        run: npx hap compile # Запускаем стандартную компиляцию Quick App
+        run: npx hap compile
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
           name: my-15-game
-          path: build/*.rpk
-
- 
+          path: |
+            dist/*.rpk
+            build/*.rpk
+            *.rpk
