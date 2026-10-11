@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install QuickApp CLI Globally
+        run: npm install -g quickapp-cli
 
       - name: Compile RPK
         run: npm run build
