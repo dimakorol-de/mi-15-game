@@ -13,11 +13,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install QuickApp Compiler
-        run: npm install -g quickapp-compiler
+      - name: Install Hap-Tools
+        run: npm install hap-tools # Устанавливаем официальный пакет внутрь сервера
 
       - name: Compile RPK
-        run: quickapp-compiler src dist
+        run: ./node_modules/hap-tools/bin/index.js compile # Прямой вызов главного файла сборщика Xiaomi
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
