@@ -11,13 +11,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Install QuickApp Compiler
-        run: npm install -g hap-tools@0.1.1
+        run: npm install -g quickapp-compiler
 
       - name: Compile RPK
-        run: hap compile
+        run: quickapp-compiler src dist
         
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
