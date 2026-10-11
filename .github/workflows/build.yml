@@ -13,14 +13,16 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Compiler
-        run: npm install -g hap-tools
+      - name: Install Hap-Tools Locally
+        run: npm install hap-tools --save-dev
 
       - name: Compile RPK
-        run: hap compile
-
+        run: npx hap compile
+        
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
           name: my-15-game
-          path: dist/*.rpk
+          path: |
+            dist/*.rpk
+            build/*.rpk
